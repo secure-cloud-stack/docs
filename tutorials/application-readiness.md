@@ -5,12 +5,12 @@ weight: 55
 
 Netic recommends for running workloads inside of Kubernetes some which is enforced by the
 policies of the secure cloud stack and some which is best-practice running Kubernetes. These
-recommendations are always valid but especially so if Netic is to provide [application operations](./application-operation/).
+recommendations are always valid but especially so if Netic is to provide [application operations](../application-operation/).
 
 ## Security
 
 The containers must be able to run under the following security constraints also enforced by the pod and container
-security context (see also [Security Context](../user/security-context/)).
+security context (see also [Security Context](../../user/security-context/)).
 
 - Running without Linux capabilities
 - Running as unprivileged

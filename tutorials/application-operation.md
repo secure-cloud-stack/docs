@@ -30,7 +30,7 @@ on duty.
 Metrics can be either specific application metrics such as rate of caught exceptions, http response error rates or other
 similar but metrics can also be core Kubernetes metrics such as memory or cpu consumption. The monitoring must be
 based on metrics rather than log patterns since metrics is much more robust to change. If the application provides
-application specific metrics the application must expose these see [Observability](./observability/).
+application specific metrics the application must expose these see [Observability](../observability/).
 
 ## Alerting Rules
 
