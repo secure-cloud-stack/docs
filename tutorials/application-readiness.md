@@ -14,7 +14,7 @@ security context (see also [Security Context](../../user/security-context/)).
 
 - Running without Linux capabilities
 - Running as unprivileged
-- Impossible to to privilege escalation
+- Impossible to do privilege escalation
 
 ## Stability
 
