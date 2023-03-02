@@ -17,14 +17,15 @@ If you want to access sensitive data from the cluster, go to the correct namespa
 a new secret in key-value-format. Using `external-secrets`, you can synchronize this data into a secret resource
 in the cluster. In the following example, the secret is called 'vault-secret', and contains the key 'pb-secret-key':
 
-``` yaml
+```yaml
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
   name: vault-secret
 spec:
   dataFrom:
-    - key: k8s/prod1/<namespace>/vault-secret
+    - extract:
+        key: k8s/prod1/<namespace>/vault-secret
   refreshInterval: 60s
   secretStoreRef:
     kind: SecretStore
@@ -36,7 +37,7 @@ spec:
 Using `dataFrom`, all key-value pairs are synced onto the secret called "vault-secret". Assuming the secret
 contain only one key the result should be as seen below.
 
-``` yaml  
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
