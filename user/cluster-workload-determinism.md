@@ -53,6 +53,7 @@ spec:
       labels:
         app.kubernetes.io/name: back-end-deployment
     spec:
+      terminationGracePeriodSeconds: 10 # short grace period - default is 30 seconds
       priorityClassName: "secure-cloud-stack-tenant-namespace-application-critical"
       containers:
       - image: nginxinc/nginx-unprivileged:1.20
@@ -69,5 +70,7 @@ spec:
 ```
 
 If nothing is specified for the application pods, the default assigned PriorityClassName is  `secure-cloud-stack-tenant-namespace-application-non-critical`. This is something supported by kubernetes itself. 
+
+The default grace period for a pod is 30 seconds. If you want to ensure that lower priority pods are preemted faster, you may adjust the `terminiationGracePeriod` to a feasible number of seconds lower than the default.
 
 Please note that there may be derived classes in some situations, where e.g. an operator is used, or a sidecar is used etc. which also need to have the `priorityClassName` set in order for that not to be assigned default priority.
