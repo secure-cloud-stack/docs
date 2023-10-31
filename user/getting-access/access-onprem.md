@@ -88,4 +88,4 @@ kubectl --kubeconfig <api-server>.yaml get nodes
 
 ## What's next
 
-* [Getting Started](/docs/user/getting-started/)
+* [Getting Started](../../)
