@@ -24,8 +24,9 @@ spec:
       labels:
         app.kubernetes.io/name: verify-app
         app.kubernetes.io/instance: verify-app
-        backup.velero.io/backup-volumes: verify-volume
         netic.dk/network-ingress: "contour"
+      annotations:
+        backup.velero.io/backup-volumes: verify-volume
     spec:
       securityContext:
         runAsUser: 1000
@@ -59,7 +60,7 @@ spec:
 
 This creates one pod and a PVC with 1Gi of storage which is mounted automatically, at the specified mount path.
 
-### Labels
+### Annotations
 
 Backup of volumes are not enabled by default, however, this can be enabled by adding the following annotation to your pods that uses the PVCs you want to have backed-up (the above example utilises this):
 
